@@ -13,7 +13,7 @@ def createKDTree(data_list):
     if LEN == 0:
         return
         # Dimensions of data points
-    dimension = len(data_list[0])-1
+    dimension = len(data_list[0])-2
     # variance
     max_var = 0
     # compute variance for every dimension, and choose the dimension
@@ -98,9 +98,11 @@ def findNN(root, query, k=1):
     #     res.append(candidates[i].point)
     max_dist = max(candidates.keys())
     nearest = []
+    full_info = []
     for k in candidates.keys():
         nearest.append(candidates[k].point)
-    return nearest, max_dist
+        full_info.append(candidates[k])
+    return nearest, max_dist, full_info
 
 
 def kdTreeForwardSearch(root, query, nodeList, candidates, k=1):

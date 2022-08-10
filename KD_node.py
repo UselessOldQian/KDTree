@@ -5,7 +5,9 @@ class KD_node:
         split:devide dimension
         LL, RR:the left child node and right child node
         """
-        self.point = point
+        self.point = point[0:2]
+        self.uid = point[2]
+        self.address = point[3]
         self.split = split
         self.left = LL
         self.right = RR
